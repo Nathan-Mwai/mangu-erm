@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Here is where I gave the background color */
+body{
+  background-color: #5eddeeab;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Montserrat',sans-serif;
+ }
