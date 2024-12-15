@@ -14,6 +14,33 @@ if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key")
 }
 
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element: <Homepage />,
+  },
+  {
+    path:"/write",
+    element: <Write />
+  },
+  {
+    path:"/records",
+    element: <Records />
+  },
+  {
+    path:"/:slug",
+    element: <SingleRecordPage />
+  },
+  {
+    path:"/login",
+    element: <LoginPage />
+  },
+  {
+    path:"/register",
+    element: <RegisterPage />
+  },
+])
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
