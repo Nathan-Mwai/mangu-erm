@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
@@ -23,27 +24,39 @@ const Navbar = () => {
             {/* mobile link list */}
             <div className={`w-full h-screen flex flex-col items-center justify-center gap-8 font-medium text-lg absolute top-16 bg-[#54c7d6ab] transition-all ease-in-out ${open ? '-right-0' : '-right-[100%]'}`}>
             <Link to="/">Home</Link>
-            <Link to="/">Add new student</Link>
-            <Link to="/">Been here before</Link>
-            <Link to="/">Past Records</Link>
+            <Link to="/write">Add a new Record</Link>
+            <Link to="/records">Past records view</Link>
+            <Link to="/:slug">Single record</Link>
             <Link to="/">Note</Link>
-            <Link to="/">Approvals</Link>
-            <Link to="">
-                <button className="py-2 px-4 rounded-3xl bg-blue-500">Sign In 👍</button>
-            </Link>
+            <SignedOut>
+        <Link to="/login">
+          <button className="py-2 px-4 rounded-3xl bg-blue-500">
+            Login 👍
+          </button>
+        </Link>
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
             </div>
         </div>
         {/* Menu Desktop */}
         <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
         <Link to="/">Home</Link>
-            <Link to="/">Add new student</Link>
-            <Link to="/">Been here before</Link>
-            <Link to="/">Past Records</Link>
+            <Link to="/write">Add a new Record</Link>
+            <Link to="/records">Past records view</Link>
+            <Link to="/:slug">Single record</Link>
             <Link to="/">Note</Link>
-            <Link to="/">Approvals</Link>
-            <Link to="">
-                <button className="py-2 px-4 rounded-3xl bg-blue-500">Sign In 👍</button>
-            </Link>
+            <SignedOut>
+        <Link to="/login">
+          <button className="py-2 px-4 rounded-3xl bg-blue-500">
+            Login 👍
+          </button>
+        </Link>
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
         </div>
     </section>
   )
