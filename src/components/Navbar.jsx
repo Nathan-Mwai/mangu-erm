@@ -57,12 +57,12 @@ const Navbar = () => {
         <Link to="/:slug">Single record</Link>
         <Link to="/">Note</Link>
         <SignedOut>
-          <Link to="/login">
-            <button className="py-2 px-4 rounded-3xl bg-blue-500">
-              Login 👍
-            </button>
-          </Link>
-        </SignedOut>
+        <Link to="/login">
+          <button className="py-2 px-4 rounded-3xl bg-blue-500">
+            Login 👍
+          </button>
+        </Link>
+      </SignedOut>
         <SignedIn>
           <UserButton />
         </SignedIn>
