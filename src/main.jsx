@@ -14,6 +14,7 @@ import LoginPage from './routes/LoginPage.jsx'
 import RegisterPage from './routes/RegisterPage.jsx'
 
 import App from './App.jsx'
+import MainLayout from './layouts/MainLayout.jsx'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
@@ -23,29 +24,34 @@ if (!PUBLISHABLE_KEY) {
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element: <Homepage />,
-  },
-  {
-    path:"/write",
-    element: <Write />
-  },
-  {
-    path:"/records",
-    element: <Records />
-  },
-  {
-    path:"/:slug",
-    element: <SingleRecordPage />
-  },
-  {
-    path:"/login",
-    element: <LoginPage />
-  },
-  {
-    path:"/register",
-    element: <RegisterPage />
-  },
+    element: <MainLayout />,
+    children:[
+      {
+        path:"/",
+        element: <Homepage />,
+      },
+      {
+        path:"/write",
+        element: <Write />
+      },
+      {
+        path:"/records",
+        element: <Records />
+      },
+      {
+        path:"/:slug",
+        element: <SingleRecordPage />
+      },
+      {
+        path:"/login",
+        element: <LoginPage />
+      },
+      {
+        path:"/register",
+        element: <RegisterPage />
+      },
+    ]
+  }
 ])
 
 createRoot(document.getElementById('root')).render(
