@@ -6,6 +6,13 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import { ClerkProvider } from '@clerk/clerk-react'
+import Homepage from './routes/Homepage.jsx'
+import Write from './routes/Write.jsx'
+import Records from './routes/Records.jsx'
+import SingleRecordPage from './routes/SingleRecordPage.jsx'
+import LoginPage from './routes/LoginPage.jsx'
+import RegisterPage from './routes/RegisterPage.jsx'
+
 import App from './App.jsx'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
